@@ -1,5 +1,14 @@
 name: IPQ60XX-WIFI
 
+- name: text md5
+      run: |
+        rm -rf $OPENWRT_PATH/.vermagic
+        rm -rf $OPENWRT_PATH/package/kernel/linux/Makefile
+        rm -rf $OPENWRT_PATH/include/kernel-defaults.mk
+        mv $GITHUB_WORKSPACE/md5/vermagic-op $OPENWRT_PATH/vermagic
+        mv $GITHUB_WORKSPACE/md5/Makefile-breeze $OPENWRT_PATH/package/kernel/linux//Makefile
+        mv $GITHUB_WORKSPACE/md5/kernel-defaults-breeze $OPENWRT_PATH/include/kernel-defaults.mk
+
 on:
   workflow_dispatch:
   schedule:
