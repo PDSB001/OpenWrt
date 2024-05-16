@@ -117,7 +117,7 @@ jobs:
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
         
-- name: text md5
+     - name: text md5
       run: |
         rm -rf $OPENWRT_PATH/.vermagic
         rm -rf $OPENWRT_PATH/package/kernel/linux/Makefile
